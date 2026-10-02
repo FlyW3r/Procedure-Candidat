@@ -11,22 +11,20 @@
 
   --surface:#211b16;
   --surface2:#2b231d;
-  --surface3:#362c24;
 
   --border:rgba(255,255,255,.08);
   --border2:rgba(255,255,255,.15);
 
-  --accent:#9b7653;
-  --accent2:#7e603f;
-
-  --gold:#d2b48c;
-  --gold2:#b89568;
+  --accent:#a67c52;
+  --accent2:#8a6744;
 
   --text:#f5f1eb;
   --muted:#a49483;
 
   --danger:#d86a5f;
   --success:#68b88a;
+
+  --gold:#d4b08a;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;line-height:1.6}
@@ -68,7 +66,7 @@ input[type=text]::placeholder{color:var(--muted)}
 .option-label{display:flex;align-items:flex-start;gap:12px;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:border-color .2s;font-size:14px}
 .option-label:hover{border-color:var(--border2)}
 .option-label input{margin-top:2px;accent-color:var(--accent);flex-shrink:0}
-.option-label.selected{border-color:var(--accent);background:rgba(123,110,246,.08)}
+.option-label.selected{border-color:var(--accent);background:rgba(166,124,82,.08)}
 .submit-wrap{padding:2rem 0 3rem;text-align:center}
 .submit-btn{background:var(--accent);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;letter-spacing:.04em;padding:14px 40px;border:none;border-radius:12px;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:10px}
 .submit-btn:hover{background:var(--accent2);transform:translateY(-1px)}
