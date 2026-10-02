@@ -7,22 +7,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: linear-gradient(135deg, #f5e6d3 0%, #ffffff 50%, #6f4e37 100%);
+  --bg: #ede3d2;           /* beige doux */
+  --surface: #faf7f2;     /* cartes */
+  --surface2: #f3ede3;    /* champs */
+  --border: rgba(111,78,55,.15);
+  --border2: rgba(111,78,55,.30);
 
-  --surface: rgba(255, 248, 240, 0.92);
-  --surface2: rgba(245, 230, 211, 0.85);
+  --accent: #6f4e37;      /* marron café */
+  --accent2: #5a3f2d;
 
-  --border: rgba(111, 78, 55, 0.15);
-  --border2: rgba(111, 78, 55, 0.30);
-
-  --accent: #8b5e3c;
-  --accent2: #6f4e37;
-
-  --text: #3a2a1d;
-  --muted: #7d6651;
+  --text: #2f241c;
+  --muted: #7b6a5d;
 
   --danger: #c0392b;
-  --success: #3d8b5a;
+  --success: #2e8b57;
   --gold: #c9a227;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -39,7 +37,7 @@ body{background: linear-gradient(135deg, #f5e6d3 0%, #ffffff 50%, #6f4e37 100%);
 .meta-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);opacity:.6}
 .rules{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:2.5rem;font-size:13.5px;color:var(--muted);line-height:1.8}
 .rules strong{color:var(--text)}
-.timer-bar{position:sticky;top:0;z-index:100;background:rgba(13,13,18,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:10px 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.timer-bar{position:sticky;top:0;z-index:100;background: rgba(250,247,242,.95);border-bottom:1px solid var(--border);;padding:10px 1.5rem;display:flex;align-items:center;justify-content:space-between}
 .timer-label{font-size:12px;color:var(--muted);font-family:'Syne',sans-serif;letter-spacing:.08em;text-transform:uppercase}
 .timer-count{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;color:var(--text);transition:color .3s}
 .timer-count.warn{color:var(--gold)}
@@ -49,7 +47,7 @@ body{background: linear-gradient(135deg, #f5e6d3 0%, #ffffff 50%, #6f4e37 100%);
 .section-header{display:flex;align-items:center;gap:12px;margin:2rem 0 1rem}
 .section-num{width:28px;height:28px;border-radius:6px;background:var(--accent);font-family:'Syne',sans-serif;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .section-title{font-family:'Syne',sans-serif;font-weight:600;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
-.q-card{background: rgba(255,255,255,0.9);backdrop-filter: blur(10px);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem;transition:border-color .2s}
+.q-card{background: var(--surface);backdrop-filter: blur(10px);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem;transition:border-color .2s}
 .q-card:focus-within{border-color:var(--border2)}
 .q-num{font-size:11px;font-family:'Syne',sans-serif;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem}
 .q-points{float:right;background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:2px 10px;font-size:11px;color:var(--muted);font-family:'Syne',sans-serif}
@@ -65,7 +63,7 @@ input[type=text]::placeholder{color:var(--muted)}
 .option-label{display:flex;align-items:flex-start;gap:12px;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:border-color .2s;font-size:14px}
 .option-label:hover{border-color:var(--border2)}
 .option-label input{margin-top:2px;accent-color:var(--accent);flex-shrink:0}
-.option-label.selected{border-color:var(--accent);background:rgba(123,110,246,.08)}
+.option-label.selected{border-color: var(--accent);background: rgba(111,78,55,.08);
 .submit-wrap{padding:2rem 0 3rem;text-align:center}
 .submit-btn{background:var(--accent);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;letter-spacing:.04em;padding:14px 40px;border:none;border-radius:12px;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:10px}
 .submit-btn:hover{background:var(--accent2);transform:translateY(-1px)}
