@@ -3,103 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Examen • Procédure 2</title>
-
+<title>Examen — Procédure 2</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
-
-:root{
-
-  --bg:#f7f1e8;
-
-  --surface:#f0e2d1;
-  --surface2:#e0c4a5;
-
-  --border:rgba(111,78,55,.18);
-  --border2:rgba(111,78,55,.35);
-
-  --accent:#8b5e3c;
-  --accent2:#6f4e37;
-
-  --text:#3e2723;
-  --muted:#6d4c41;
-
-  --danger:#c0392b;
-  --success:#2e7d32;
-  --gold:#c49a6c;
+:root {
+  --bg: #0d0d12;
+  --surface: #13131a;
+  --surface2: #1a1a24;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.13);
+  --accent: #7b6ef6;
+  --accent2: #5b4fcf;
+  --text: #f0f0f5;
+  --muted: #8888a0;
+  --danger: #f06060;
+  --success: #50c878;
+  --gold: #f5c842;
 }
-
-{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-body{background:linear-gradient(135deg,#f7f1e8 0%,#ead8c0 45%,#c69c72 100%);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;line-height:1.6;}
-.noise{position:fixed;inset:0;pointer-events:none;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");z-index:0;}
-.container{max-width:720px;margin:0 auto;padding:2rem 1.5rem;position:relative;z-index:1;}
-.exam-header{text-align:center;padding:3rem 0 2.5rem;}
-.rank-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.35);border:1px solid var(--border2);border-radius:100px;padding:6px 16px;font-family:'Syne',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.5rem;}
-.rank-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);display:block;}
-.exam-title{font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:1rem;}
-.exam-title span{color:var(--accent);}
-.exam-meta{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:1.5rem;}
-.meta-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
-.meta-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);opacity:.6;}
-.rules{background:rgba(255,255,255,.22);backdrop-filter:blur(10px);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:2.5rem;font-size:13.5px;color:var(--muted);line-height:1.8;}
-.rules strong{color:var(--text);}
-.q-card{background:rgba(255,255,255,.20);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem;}textarea,input[type=text]{width:100%;background:#f9f3ed;border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--text);outline:none;}textarea:focus,input[type=text\]:focus{border-color:var(--accent);}
-.submit-btn{background:linear-gradient(135deg,#8b5e3c,#6f4e37);color:white;border:none;border-radius:12px;padding:14px 40px;cursor:pointer;}
-.submit-btn:hover{filter:brightness(1.05);}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;line-height:1.6}
+.noise{position:fixed;inset:0;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");z-index:0}
+.container{max-width:720px;margin:0 auto;padding:2rem 1.5rem;position:relative;z-index:1}
+.exam-header{text-align:center;padding:3rem 0 2.5rem}
+.rank-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border2);border-radius:100px;padding:6px 16px;font-family:'Syne',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1.5rem}
+.rank-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);display:block}
+.exam-title{font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:1rem}
+.exam-title span{color:var(--accent)}
+.exam-meta{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:1.5rem}
+.meta-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.meta-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);opacity:.6}
+.rules{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:2.5rem;font-size:13.5px;color:var(--muted);line-height:1.8}
+.rules strong{color:var(--text)}
+.timer-bar{position:sticky;top:0;z-index:100;background:rgba(13,13,18,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:10px 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.timer-label{font-size:12px;color:var(--muted);font-family:'Syne',sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.timer-count{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;color:var(--text);transition:color .3s}
+.timer-count.warn{color:var(--gold)}
+.timer-count.danger{color:var(--danger)}
+.progress-track{flex:1;height:3px;background:var(--border2);margin:0 1.5rem;border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:var(--accent);border-radius:3px;transition:width .5s}
+.section-header{display:flex;align-items:center;gap:12px;margin:2rem 0 1rem}
+.section-num{width:28px;height:28px;border-radius:6px;background:var(--accent);font-family:'Syne',sans-serif;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.section-title{font-family:'Syne',sans-serif;font-weight:600;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.q-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem;transition:border-color .2s}
+.q-card:focus-within{border-color:var(--border2)}
+.q-num{font-size:11px;font-family:'Syne',sans-serif;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem}
+.q-points{float:right;background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:2px 10px;font-size:11px;color:var(--muted);font-family:'Syne',sans-serif}
+.q-text{font-size:15px;font-weight:500;color:var(--text);margin-bottom:1.25rem;line-height:1.6}
+.q-img{width:100%;max-height:280px;object-fit:contain;border-radius:10px;margin-bottom:1rem;border:1px solid var(--border)}
+textarea{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;resize:vertical;min-height:100px;line-height:1.6;transition:border-color .2s;outline:none}
+textarea:focus{border-color:var(--accent)}
+textarea::placeholder{color:var(--muted)}
+input[type=text]{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;transition:border-color .2s;outline:none}
+input[type=text]:focus{border-color:var(--accent)}
+input[type=text]::placeholder{color:var(--muted)}
+.options{display:flex;flex-direction:column;gap:8px;margin-top:.25rem}
+.option-label{display:flex;align-items:flex-start;gap:12px;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:border-color .2s;font-size:14px}
+.option-label:hover{border-color:var(--border2)}
+.option-label input{margin-top:2px;accent-color:var(--accent);flex-shrink:0}
+.option-label.selected{border-color:var(--accent);background:rgba(123,110,246,.08)}
+.submit-wrap{padding:2rem 0 3rem;text-align:center}
+.submit-btn{background:var(--accent);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;letter-spacing:.04em;padding:14px 40px;border:none;border-radius:12px;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:10px}
+.submit-btn:hover{background:var(--accent2);transform:translateY(-1px)}
+.submit-btn:active{transform:translateY(0)}
+.submit-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.success-screen{display:none;text-align:center;padding:4rem 0}
+.success-icon{width:80px;height:80px;border-radius:50%;background:rgba(80,200,120,.15);border:2px solid var(--success);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:36px}
+.success-title{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;margin-bottom:.75rem}
+.success-sub{color:var(--muted);font-size:15px;max-width:380px;margin:0 auto}
+.overdue-screen{display:none;text-align:center;padding:4rem 0}
+.overdue-icon{width:80px;height:80px;border-radius:50%;background:rgba(240,96,96,.12);border:2px solid var(--danger);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:36px}
+.required-star{color:var(--danger);margin-left:3px}
+.field-label{font-size:13px;color:var(--muted);margin-bottom:6px;font-weight:500}
+.no-questions{text-align:center;padding:3rem 0;color:var(--muted);font-size:14px}
+@media(max-width:500px){.exam-meta{gap:1rem}}
 </style>
+<!-- Firebase SDK -->
 <script type="module">
-import { createClient }
-from "https://esm.sh/@supabase/supabase-js@2";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-const supabase = createClient(
-  "https://hxbjgktsrrpiwvuvzkto.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh4Ympna3RzcnJwaXd2dXZ6a3RvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA4ODUyNDEsImV4cCI6MjEwNjQ2MTI0MX0.r5PVUgVOUV91N7HFPBqR4nnw0wSzT4L9i8mg3DUxJ88"
-);
-window.storage = {
-  async get(key){
-    try{
-      const { data, error } = await supabase
-        .from("storage")
-        .select("value")
-        .eq("key", key)
-        .single();
-      if(error || !data) return null;
-      return {
-        value:data.value
-      };
-    }catch(e){
-      console.error(e);
-      return null;
+  const firebaseConfig = {
+    apiKey: "AIzaSyCxdDLLbMcVVP8OCgiyIZs1-ujz7rkMSsg",
+    authDomain: "procedure2-900aa.firebaseapp.com",
+    databaseURL: "https://procedure2-900aa-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "procedure2-900aa",
+    storageBucket: "procedure2-900aa.firebasestorage.app",
+    messagingSenderId: "1045293722437",
+    appId: "1:1045293722437:web:f978959fbcb198e328ac2c"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  window.storage = {
+    get: async (key) => {
+      try {
+        const snap = await get(ref(db, 'proc2/' + key));
+        if (snap.exists()) return { value: snap.val() };
+        return null;
+      } catch(e) { console.error('Firebase get error', e); return null; }
+    },
+    set: async (key, value) => {
+      try {
+        await set(ref(db, 'proc2/' + key), value);
+        return { value };
+      } catch(e) { console.error('Firebase set error', e); return null; }
     }
-  },
-  async set(key,value){
-    try{
-      const { error } = await supabase
-        .from("storage")
-        .upsert({
-          key,
-          value
-        });
-      if(error) throw error;
-      return { value };
-    }catch(e){
-      console.error(e);
-      return null;
-    }
-  }
-};
-window._firebaseReady = true;
-window.dispatchEvent(
-  new Event("firebaseReady")
-);
+  };
+
+  window._firebaseReady = true;
+  window.dispatchEvent(new Event('firebaseReady'));
 </script>
-</head>
 </head>
 <body>
 <div class="noise"></div>
@@ -127,7 +141,7 @@ window.dispatchEvent(
   <div id="examContent">
     <div class="exam-header">
       <div class="rank-badge" id="headerBadge">Formation Procédure</div>
-      <h1 class="exam-title" id="headerTitle">Examen<br><span id="headerTitleSpan">Procédure</span></h1>
+      <h1 class="exam-title" id="headerTitle">Examen<br><span id="headerTitleSpan">Procédure 2</span></h1>
       <div class="exam-meta">
         <div class="meta-item"><span class="meta-dot"></span><span id="metaDuration">25 minutes</span></div>
         <div class="meta-item"><span class="meta-dot"></span><span id="metaPass">Seuil de réussite : 17/20</span></div>
@@ -138,7 +152,7 @@ window.dispatchEvent(
     <div class="rules" id="rulesBlock">
       <strong>Règles :</strong> Ne pas renseigner de fausses informations · Bien indiquer la date du jour · Toute forme de triche entraîne une convocation CS + BL.<br>
       Le(s) formateur(s) présent(s) ne vous aideront pas. <strong>AUCUNE QUESTION PENDANT L'EXAMEN.</strong><br>
-      <strong id="signatureBlock">408 | Alexander Adkins —  & 428 | Martin Dacosta — Lead & Co-Lead FTO Procédure</strong>
+      <strong id="signatureBlock">064 | Maxence Brown — Lead formation procédure.</strong>
     </div>
 
     <div class="section-header">
@@ -176,52 +190,30 @@ let submitted = false;
 
 async function loadConfig() {
   try {
-    const cfg =
-      await window.storage.getConfig();
-    if (cfg) {
-      if (cfg.duration) {
-        DURATION = cfg.duration * 60;
-        timeLeft = DURATION;
+    const r = await window.storage.get('proc2_config');
+    if (r && r.value) {
+      const cfg = JSON.parse(r.value);
+      if (cfg.duration) { DURATION = cfg.duration * 60; timeLeft = DURATION; }
+      if (cfg.pass && cfg.title) {
+        document.getElementById('metaPass').textContent = 'Seuil de réussite : ' + cfg.pass + '/20';
       }
-
-      if (cfg.pass_score) {
-        document.getElementById(
-          'metaPass'
-        ).textContent =
-          'Seuil de réussite : ' +
-          cfg.pass_score +
-          '/20';
+      if (cfg.duration) document.getElementById('metaDuration').textContent = cfg.duration + ' minutes';
+      if (cfg.signature) document.getElementById('signatureBlock').textContent = cfg.signature;
+      if (cfg.rules) {
+        const rb = document.getElementById('rulesBlock');
+        rb.innerHTML = '<strong>Règles :</strong> ' + cfg.rules + '<br><strong id="signatureBlock">' + (cfg.signature || '') + '</strong>';
       }
-
-      if (cfg.duration) {
-        document.getElementById(
-          'metaDuration'
-        ).textContent =
-          cfg.duration +
-          ' minutes';
-      }
-
-      if (cfg.signature) {
-        document.getElementById(
-          'signatureBlock'
-        ).textContent =
-          cfg.signature;
-      }
-
-      if (cfg.title) {
-        document.getElementById(
-          'headerTitleSpan'
-        ).textContent =
-          cfg.title;
-      }
+      if (cfg.title) document.getElementById('headerTitleSpan').textContent = cfg.title;
     }
-  } catch(e) {
-    console.error(e);
-  }
+  } catch(e) {}
 }
 
 async function loadQuestions() {
-  return await window.storage.getQuestions();
+  try {
+    const r = await window.storage.get('proc2_questions');
+    if (r && r.value) return JSON.parse(r.value);
+  } catch(e) {}
+  return [];
 }
 
 async function init() {
