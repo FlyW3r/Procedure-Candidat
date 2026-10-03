@@ -218,13 +218,27 @@ async function loadQuestions() {
 
 async function init() {
   await loadConfig();
-  const questions = await loadQuestions();
+  let questions = await loadQuestions();
+  const normalQuestions = questions.filter(
+    q => q.questionType !== 'connaissance'
+  );
+  const situationQuestions = questions.filter(
+    q => q.questionType === 'mise_en_situation'
+  );
+  const selectedNormals =
+    [...normalQuestions]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 15);
+  const selectedSituation =
+    situationQuestions[
+      Math.floor(Math.random() * situationQuestions.length)
+    ];
+  questions = [
+    ...selectedNormals,
+    ...(selectedSituation ? [selectedSituation] : [])
+  ];
   renderQuestions(questions);
   startTimer();
-  document.getElementById('timerBar').style.display = 'flex';
-  const m = Math.floor(DURATION / 60);
-  document.getElementById('timerCount').textContent = String(m).padStart(2,'0') + ':00';
-}
 
 function renderQuestions(questions) {
   const wrap = document.getElementById('questionsWrap');
