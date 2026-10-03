@@ -220,7 +220,7 @@ async function init() {
   await loadConfig();
   let questions = await loadQuestions();
   const normalQuestions = questions.filter(
-    q => q.questionType !== 'connaissance'
+    q => (q.questionType || 'connaissance') === 'connaissance'
   );
   const situationQuestions = questions.filter(
     q => q.questionType === 'mise_en_situation'
